@@ -6,9 +6,9 @@ from wakeonlan import send_magic_packet
 from utils import ping, get_time
 
 logging.basicConfig (
-  filename='./wol.log',
+  filename='wol.log',
   filemode='a', 
-  format='%(name)s - %(levelname)s - %(message)s',
+  format='%(levelname)s\t- %(message)s',
   level=logging.DEBUG
 )
 
@@ -21,14 +21,14 @@ class machineThread():
   def threadFunction(self):
     print("Thread starting for server " + self.machine.name)
 
-    logging.info('%s -- PINGING -- , %s', self.machine.name, get_time())
+    logging.info('%s -- PINGING -- %s (%s)', get_time(), self.machine.name, self.machine.ip)
     if ping(self.machine.ip) != 0:
       try:
         print(self.machine.mac)
-        logging.info('%s -- SENDING MAGIC PACKET -- , %s', self.machine.name, get_time())
-        send_magic_packet(macs= self.machine.mac)
+        logging.info('%s -- SENDING MAGIC PACKET -- %s (%s)', get_time(), self.machine.name, self.machine.mac)
+        send_magic_packet(self.machine.mac)
       except:
-        logging.error('%s -- ERROR SENDING MAGIC PACKET -- , %s', self.machine.name , get_time())
+        logging.error('%s -- ERROR SENDING MAGIC PACKET -- %s (%s)', get_time(), self.machine.name, self.machine.mac)
 
 
     time.sleep(5)
