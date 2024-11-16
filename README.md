@@ -4,7 +4,7 @@ A python script that provides wake-on-lan functionality to machines within your 
 
 Service implementation of a Wake on LAN service for linux using systemd.
 
-The program uses the file **machines.yml** to load the information about the machines (The file must be created with the correct info).
+The program uses the file **machines.yml** to load the information about the machines. **The file must be created with the correct syntax.**
 
 Example -- **machines.yml**
 ```yml
