@@ -1,10 +1,15 @@
 [Unit]
 Description=Wake on LAN service.
-After=multi-user.target
+After=network.target
 
 [Service]
+WorkingDirectory=/usr/bin/wol
+
 Type=idle
-ExecStart=/bin/wol/virtual/bin/python /bin/wol/wol.py
+ExecStart=/usr/bin/wol/virtual/bin/python /usr/bin/wol/wol.py
+
+User=root
+Group=root
 
 [Install]
 WantedBy=multi-user.target
