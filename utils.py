@@ -5,7 +5,7 @@ import os
 from datetime import datetime
 
 def read_file():
-  with open('machines.yml', 'r') as file:
+  with open('./machines.yml', 'r') as file:
     return yaml.safe_load(file)
 
 def get_time():
