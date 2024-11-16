@@ -24,12 +24,13 @@ class machineThread():
     logging.info('%s -- PINGING -- %s (%s)', get_time(), self.machine.name, self.machine.ip)
     if ping(self.machine.ip) != 0:
       try:
-        print(self.machine.mac)
+        logging.info('%s -- MACHINE IS DOWN -- %s (%s)', get_time(), self.machine.name, self.machine.ip)
         logging.info('%s -- SENDING MAGIC PACKET -- %s (%s)', get_time(), self.machine.name, self.machine.mac)
         send_magic_packet(self.machine.mac)
       except:
         logging.error('%s -- ERROR SENDING MAGIC PACKET -- %s (%s)', get_time(), self.machine.name, self.machine.mac)
-
+    else:
+      logging.info('%s -- MACHINE IS UP -- %s (%s)', get_time(), self.machine.name, self.machine.ip)
 
     time.sleep(5)
     print("Thread stopping for server " + self.machine.name)

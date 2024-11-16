@@ -1,5 +1,3 @@
-# Utility functions go here.
-
 import yaml
 import os
 from datetime import datetime
@@ -10,7 +8,7 @@ def read_file():
 
 def get_time():
   now = datetime.now()
-  return now.strftime('%H:%M:%S')
+  return now.strftime('%Y-%m-%d %H:%M:%S')
 
 def ping(ip):
   return os.system('ping {} -c 2'.format(ip))
