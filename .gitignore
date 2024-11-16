@@ -1,3 +1,4 @@
 virtual/
 wol.log
 __pycache__
+machines.yml
