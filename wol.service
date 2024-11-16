@@ -4,7 +4,7 @@ After=multi-user.target
 
 [Service]
 Type=idle
-ExecStart=/root/wol/virtual/bin/python /root/wol/wol.py
+ExecStart=/bin/wol/virtual/bin/python /bin/wol/wol.py
 
 [Install]
 WantedBy=multi-user.target
