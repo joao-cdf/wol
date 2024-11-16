@@ -1,0 +1,16 @@
+# List of servers to be added to the wakeonlan program.
+
+dobby-pi:
+  name: 'dobby-pi'
+  ip:   '192.168.10.101'
+  mac:  '20:89:84:B4:17:9F'
+
+dalaran:
+  name: 'dalaran'
+  ip:   '192.168.10.200'
+  mac:  '40:B0:34:1D:EE:54'
+
+dobby:
+  name: dobby
+  ip:   '192.168.10.100'
+  mac:  '20:89:84:B4:17:9F'

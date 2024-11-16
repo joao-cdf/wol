@@ -1,0 +1,10 @@
+[Unit]
+Description=Wake on LAN service.
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/root/wol/virtual/bin/python /root/wol/wol.py
+
+[Install]
+WantedBy=multi-user.target
