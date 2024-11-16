@@ -13,6 +13,19 @@ Copy the project to /usr/bin/
 cp -r /path/to/project/wol /usr/bin/
 ```
 
+Create virtual environment
+```bash
+cd /usr/bin/wol
+python3 -m venv virtual
+```
+
+Install dependencies
+```bash
+cd /usr/bin/wol
+source virtual/bin/activate
+python -m pip install $(cat requirements.txt)
+```
+
 Copy wol.service to /etc/systemd/system
 ```bash
 cp /usr/bin/wol/wol.service /etc/systemd/system
